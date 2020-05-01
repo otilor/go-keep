@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<head>
+    <title>CRUD App written in Golang</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Header -->
+        <div class="alert alert-primary text-center">
+            <h2>CRUD App written in <span class="badge badge-success">Golang</span></h2>
+            <p class="lead">Guess I used <span class="badge badge-danger">MySQL</span> for the <abbr title="Database">DB</abbr></p>
+        </div>
+        
+
+
+        <!-- Beginning of Table -->
+        <table class="table table-striped">
+            <thead>
+                <th>Id</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </thead>
+
+
+            <tbody>
+                {{ range . }}
+                    <tr>
+                        
+                        <td>{{ .Id }}</td>
+                        <td>{{ .Name }}</td>
+                        <td>{{ .City }}</td>
+                        <td><a href="/show?id={{ .Id }}">View</a></td>
+                        <td><a class = "edit" href="/edit?id={{ .Id }}">Edit</a></td>
+                        <td><a href="/delete?id={{ .Id }}">Delete</a></td>
+                        
+                    </tr>
+                {{ end }}
+            </tbody>
+
+        </table>
+        <!-- End of table -->
+        <div>
+            <a href = "/new" class="btn btn-success btn-lg">New Entry</a>
+        </div>
+    </div>
+    
+</body>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script>
+    // $(document).ready(function (){
+    //     $(".edit").click(function (e){
+    //         e.preventDefault()
+            
+    //         alert("Edit feature coming soon!")
+    //     })
+    // })
+</script>
+</html>

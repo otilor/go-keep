@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        {{ range . }}
+        <form role = "form" action="/update?id={{ .Id }}" method="post">
+            
+            <div class="form-group">
+                <label for="email">Name: </label>
+                <input type = "text" class="form-control" name="name" required="" value="{{ .Name }}">
+            </div>
+            <div class="form-group">
+                <label>City:</label>
+                <input name = "city" type="text" class="form-control" id="pwd" required="" value="{{ .City }}">
+            </div>
+            <input type="submit" class="btn btn-primary" value="Submit">
+            {{ end }}
+        </form>
+        <a href = "/" class="btn btn-link">Go Home</a>
+    </div>
+</body>
+
+
+
+
+
+
+
+
+</html>
