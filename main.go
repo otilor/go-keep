@@ -37,7 +37,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 		panic(err.Error())
 	}
 	emp := Employee{}
-	res := []Employee{}
+	car res []Employee
 
 	for selDB.Next() {
 		var id int
